@@ -9,9 +9,9 @@ public class DashaMapThree extends DashaMap{
 
     private String hashFunctionThree(String input) {
         if (input.length() > 1) {
-            int bucketZero = getBucketIndex("" + input.charAt(0));
-            int bucketOne = getBucketIndex("" + input.charAt(1));
-            return "" + alphabet.charAt((bucketZero + bucketOne) % alphabet.length());
+            int alphaNumOne = alphabet.indexOf(input.charAt(0)) + 1;
+            int alphaNumTwo = alphabet.indexOf(input.charAt(1)) + 1;
+            return "" + alphabet.charAt((alphaNumOne + alphaNumTwo) % alphabet.length() - 1);
         }
         return null;
     }
